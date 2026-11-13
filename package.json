@@ -1,15 +1,38 @@
 {
-  "name": "homebridge-mac-wake",
-  "displayName": "Mac Wake (Wake-on-LAN)",
-  "version": "1.0.0",
+  "name": "homebridge-mac-wakeonlan",
+  "version": "0.0.0",
   "description": "Sveglia i Mac in rete (WiFi/Ethernet) con un interruttore in Apple Home, tramite Wake-on-LAN.",
-  "main": "index.js",
+  "keywords": [
+    "homebridge-plugin",
+    "wake-on-lan",
+    "wol",
+    "mac",
+    "wifi",
+    "homekit"
+  ],
+  "homepage": "https://github.com/DavideFarina2010/homebridge-mac-wakeonlan#readme",
+  "bugs": {
+    "url": "https://github.com/DavideFarina2010/homebridge-mac-wakeonlan/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavideFarina2010/homebridge-mac-wakeonlan.git"
+  },
   "license": "MIT",
-  "keywords": ["homebridge-plugin", "wake-on-lan", "wol", "mac", "wifi", "homekit"],
+  "author": "davidefarina2010",
+  "type": "commonjs",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "config.schema.json",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.js"
+  },
   "engines": {
     "node": ">=18.0.0",
     "homebridge": "^1.6.0 || ^2.0.0-beta.0"
   },
-  "files": ["index.js", "config.schema.json", "README.md"],
-  "scripts": { "test": "node test.js" }
+  "displayName": "Mac Wake (Wake-on-LAN)"
 }
