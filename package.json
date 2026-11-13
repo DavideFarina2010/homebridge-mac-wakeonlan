@@ -8,7 +8,8 @@
     "wol",
     "mac",
     "wifi",
-    "homekit"
+    "homekit",
+    "supports-hap"
   ],
   "homepage": "https://github.com/DavideFarina2010/homebridge-mac-wakeonlan#readme",
   "bugs": {
@@ -27,7 +28,8 @@
     "config.schema.json",
     "README.md",
     "README.it.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "test": "node test.js"

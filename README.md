@@ -77,6 +77,10 @@ Or search for "Mac Wake" in the Homebridge UI. Then configure it from Homebridge
 - The switch stays Off even when the Mac is awake: the Mac may not answer ping. Set `statusPort` to an open port such as `22`.
 - Run Homebridge with `-D` to see the status checks in the log.
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
 ## Tests
 
 ```bash

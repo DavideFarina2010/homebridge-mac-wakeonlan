@@ -2,28 +2,29 @@
   "pluginAlias": "MacWake",
   "pluginType": "platform",
   "singular": true,
-  "headerDisplay": "Aggiungi i Mac da svegliare. Su ogni Mac attiva \"Riattiva per accesso alla rete\" in Impostazioni di Sistema.",
+  "headerDisplay": "Add the Macs to wake. On each Mac, turn on \"Wake for network access\" in System Settings.",
   "schema": {
     "type": "object",
     "properties": {
-      "name": { "title": "Nome piattaforma", "type": "string", "default": "Mac Wake" },
+      "name": { "title": "Platform name", "type": "string", "default": "Mac Wake" },
       "devices": {
-        "title": "Mac",
+        "title": "Macs",
         "type": "array",
         "items": {
           "type": "object",
           "properties": {
-            "name": { "title": "Nome (in Home)", "type": "string", "required": true, "placeholder": "MacBook Pro" },
-            "mac": { "title": "Indirizzo MAC (WiFi)", "type": "string", "required": true, "placeholder": "aa:bb:cc:dd:ee:ff" },
-            "ip": { "title": "Indirizzo IP (consigliato)", "type": "string", "description": "Con l'IP lo switch riflette lo stato reale del Mac (ping) e il pacchetto viene inviato anche in unicast. Usa una prenotazione DHCP.", "placeholder": "192.168.1.50" },
-            "statusPort": { "title": "Porta TCP per lo stato (opzionale)", "type": "integer", "description": "Se il Mac non risponde al ping (firewall in modalità stealth), controlla una porta, es. 22 o 5900." },
-            "broadcastAddress": { "title": "Indirizzo di broadcast (opzionale)", "type": "string", "description": "Se vuoto usa 255.255.255.255 e i broadcast di tutte le interfacce.", "placeholder": "192.168.1.255" },
-            "wolPort": { "title": "Porta WoL", "type": "integer", "default": 9 },
-            "sendUnicast": { "title": "Invia anche in unicast all'IP", "type": "boolean", "default": true },
-            "pollInterval": { "title": "Intervallo controllo stato (s)", "type": "integer", "default": 15, "minimum": 5 },
-            "wakeTimeout": { "title": "Attesa massima risveglio (s)", "type": "integer", "default": 90, "minimum": 10 },
-            "sleepCommand": { "title": "Comando per mettere in stop (opzionale)", "type": "string", "description": "Eseguito quando metti lo switch su Off. Es: ssh utente@192.168.1.50 pmset sleepnow", "placeholder": "ssh utente@192.168.1.50 pmset sleepnow" }
-          }
+            "name": { "title": "Name (in Home)", "type": "string", "placeholder": "MacBook Pro" },
+            "mac": { "title": "MAC address (Wi-Fi)", "type": "string", "placeholder": "aa:bb:cc:dd:ee:ff" },
+            "ip": { "title": "IP address (recommended)", "type": "string", "description": "With an IP the switch reflects the real state of the Mac (ping) and the packet is also sent as unicast. Use a DHCP reservation.", "placeholder": "192.168.1.50" },
+            "statusPort": { "title": "TCP status port (optional)", "type": "integer", "description": "If the Mac does not answer ping (firewall in stealth mode), check a TCP port instead, e.g. 22 or 5900." },
+            "broadcastAddress": { "title": "Broadcast address (optional)", "type": "string", "description": "If empty, uses 255.255.255.255 and the broadcast address of every local interface.", "placeholder": "192.168.1.255" },
+            "wolPort": { "title": "WoL port", "type": "integer", "default": 9 },
+            "sendUnicast": { "title": "Also send as unicast to the IP", "type": "boolean", "default": true },
+            "pollInterval": { "title": "Status check interval (s)", "type": "integer", "default": 15, "minimum": 5 },
+            "wakeTimeout": { "title": "Maximum wake wait (s)", "type": "integer", "default": 90, "minimum": 10 },
+            "sleepCommand": { "title": "Sleep command (optional)", "type": "string", "description": "Run when the switch is turned Off. E.g. ssh user@192.168.1.50 pmset sleepnow", "placeholder": "ssh user@192.168.1.50 pmset sleepnow" }
+          },
+          "required": ["name", "mac"]
         }
       }
     }

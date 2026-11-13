@@ -14,5 +14,5 @@ let got = 0;
 srv.on('message', (m) => { assert(m.equals(p)); got++; });
 srv.bind(0, '127.0.0.1', async () => {
   await sendMagicPacket('aabbccddeeff', { targets: ['127.0.0.1'], port: srv.address().port, count: 3, interval: 20 });
-  setTimeout(() => { assert.strictEqual(got, 3); console.log('OK: 3 pacchetti ricevuti, formato corretto'); srv.close(); }, 100);
+  setTimeout(() => { assert.strictEqual(got, 3); console.log('OK: 3 packets received, format is correct'); srv.close(); }, 100);
 });

@@ -52,5 +52,8 @@ Installa da npm:
 - Off senza `sleepCommand` non fa nulla: lo stato viene ripristinato a quello reale.
 - Test: `npm test`.
 
+## Changelog
+Vedi [CHANGELOG.md](CHANGELOG.md).
+
 ## Licenza
 [MIT](LICENSE)
