@@ -1,0 +1,36 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+  id-token: write # OIDC per il Trusted Publishing di npm
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Verifica che il tag corrisponda alla versione in package.json
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG="$(node -p "require('./package.json').version")"
+          if [ "$TAG" != "$PKG" ]; then
+            echo "Il tag ($TAG) non corrisponde a package.json ($PKG)"; exit 1
+          fi
+
+      - name: Aggiorna npm (il Trusted Publishing richiede npm >= 11.5.1)
+        run: npm install -g npm@latest
+
+      - run: npm test
+
+      - run: npm publish --access public

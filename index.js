@@ -5,7 +5,7 @@ const net = require('net');
 const os = require('os');
 const { execFile, exec } = require('child_process');
 
-const PLUGIN_NAME = 'homebridge-mac-wake';
+const PLUGIN_NAME = 'homebridge-mac-wakeonlan';
 const PLATFORM_NAME = 'MacWake';
 
 /* ---------- utilità ---------- */

@@ -1,11 +1,11 @@
-# homebridge-mac-wake
+# homebridge-mac-wakeonlan
 
 Plugin Homebridge che sveglia i Mac in rete (WiFi o Ethernet) con **Wake-on-LAN** e li espone in Apple Home come interruttori.
 
 ## Installazione
 Copia la cartella in una directory raggiungibile da Homebridge e installa:
 
-    sudo npm install -g /percorso/homebridge-mac-wake
+    sudo npm install -g /percorso/homebridge-mac-wakeonlan
 
 (oppure pubblicala su npm e cercala dalla UI di Homebridge). Poi configura da Homebridge UI → Plugin → Mac Wake → Impostazioni.
 
