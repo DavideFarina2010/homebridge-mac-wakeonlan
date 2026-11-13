@@ -19,13 +19,15 @@
     "url": "git+https://github.com/DavideFarina2010/homebridge-mac-wakeonlan.git"
   },
   "license": "MIT",
-  "author": "davidefarina2010",
+  "author": "Davide Farina",
   "type": "commonjs",
   "main": "index.js",
   "files": [
     "index.js",
     "config.schema.json",
-    "README.md"
+    "README.md",
+    "README.it.md",
+    "LICENSE"
   ],
   "scripts": {
     "test": "node test.js"
