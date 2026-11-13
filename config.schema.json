@@ -1,0 +1,31 @@
+{
+  "pluginAlias": "MacWake",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Aggiungi i Mac da svegliare. Su ogni Mac attiva \"Riattiva per accesso alla rete\" in Impostazioni di Sistema.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": { "title": "Nome piattaforma", "type": "string", "default": "Mac Wake" },
+      "devices": {
+        "title": "Mac",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "title": "Nome (in Home)", "type": "string", "required": true, "placeholder": "MacBook Pro" },
+            "mac": { "title": "Indirizzo MAC (WiFi)", "type": "string", "required": true, "placeholder": "aa:bb:cc:dd:ee:ff" },
+            "ip": { "title": "Indirizzo IP (consigliato)", "type": "string", "description": "Con l'IP lo switch riflette lo stato reale del Mac (ping) e il pacchetto viene inviato anche in unicast. Usa una prenotazione DHCP.", "placeholder": "192.168.1.50" },
+            "statusPort": { "title": "Porta TCP per lo stato (opzionale)", "type": "integer", "description": "Se il Mac non risponde al ping (firewall in modalità stealth), controlla una porta, es. 22 o 5900." },
+            "broadcastAddress": { "title": "Indirizzo di broadcast (opzionale)", "type": "string", "description": "Se vuoto usa 255.255.255.255 e i broadcast di tutte le interfacce.", "placeholder": "192.168.1.255" },
+            "wolPort": { "title": "Porta WoL", "type": "integer", "default": 9 },
+            "sendUnicast": { "title": "Invia anche in unicast all'IP", "type": "boolean", "default": true },
+            "pollInterval": { "title": "Intervallo controllo stato (s)", "type": "integer", "default": 15, "minimum": 5 },
+            "wakeTimeout": { "title": "Attesa massima risveglio (s)", "type": "integer", "default": 90, "minimum": 10 },
+            "sleepCommand": { "title": "Comando per mettere in stop (opzionale)", "type": "string", "description": "Eseguito quando metti lo switch su Off. Es: ssh utente@192.168.1.50 pmset sleepnow", "placeholder": "ssh utente@192.168.1.50 pmset sleepnow" }
+          }
+        }
+      }
+    }
+  }
+}
