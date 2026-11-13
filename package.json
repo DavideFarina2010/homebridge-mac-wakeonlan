@@ -1,6 +1,6 @@
 {
   "name": "homebridge-mac-wakeonlan",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sveglia i Mac in rete (WiFi/Ethernet) con un interruttore in Apple Home, tramite Wake-on-LAN.",
   "keywords": [
     "homebridge-plugin",
